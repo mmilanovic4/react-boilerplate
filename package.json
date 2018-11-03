@@ -8,8 +8,8 @@
 	},
 	"license": "LGPL-3.0-or-later",
 	"scripts": {
-		"build": "webpack",
-		"start:dev": "webpack-dev-server --open"
+		"build": "webpack --config webpack.prod.js",
+		"start:dev": "webpack-dev-server --open --config webpack.dev.js"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.1.2",
@@ -21,7 +21,8 @@
 		"react-dom": "^16.6.0",
 		"webpack": "^4.23.1",
 		"webpack-cli": "^3.1.2",
-		"webpack-dev-server": "^3.1.10"
+		"webpack-dev-server": "^3.1.10",
+		"webpack-merge": "^4.1.4"
 	},
 	"dependencies": {
 		"css-loader": "^1.0.1",
