@@ -20,11 +20,14 @@ module.exports = {
 			// Babel
 			{
 				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader'
-				}
-			}
+				use: 'babel-loader',
+				exclude: /node_modules/
+			},
+			// CSS
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
+		},
 		]
 	},
 
