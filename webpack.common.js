@@ -1,6 +1,9 @@
 module.exports = {
 	entry: {
-		app: './src/index.js'
+		app: [
+			'@babel/polyfill',
+			'./src/index.js'
+		]
 	},
 	resolve: {
 		extensions: ['.js', '.jsx']
@@ -24,7 +27,7 @@ module.exports = {
 			},
 			// Fonts
 			{
-				test: /\.(eot|otf|svg|ttf|woff(?:2)?)$/,
+				test: /\.(eot|otf|svg|ttf|woff2?)$/,
 				use: 'file-loader'
 			}
 		]
