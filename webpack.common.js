@@ -22,6 +22,11 @@ module.exports = {
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader']
 			},
+			// Fonts
+			{
+				test: /\.(eot|otf|svg|ttf|woff(?:2)?)$/,
+				use: 'file-loader'
+			}
 		]
 	}
 };
