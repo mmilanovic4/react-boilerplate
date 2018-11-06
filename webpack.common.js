@@ -16,7 +16,7 @@ module.exports = {
 		rules: [
 			// Babel
 			{
-				test: /\.jsx?$/,
+				test: /\.(js|jsx)$/,
 				use: 'babel-loader',
 				exclude: /node_modules/
 			},
@@ -27,12 +27,12 @@ module.exports = {
 			},
 			// Images
 			{
-				test: /\.(jpg|jpeg|png|gif)$/,
+				test: /\.(jpg|jpeg|png|gif|webp)$/,
 				use: 'file-loader'
 			},
 			// Fonts
 			{
-				test: /\.(eot|otf|svg|ttf|woff2?)$/,
+				test: /\.(eot|otf|svg|ttf|woff|woff2)$/,
 				use: 'file-loader'
 			}
 		]
