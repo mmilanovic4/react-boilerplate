@@ -16,7 +16,7 @@ module.exports = {
 		rules: [
 			// Babel
 			{
-				test: /\.(js|jsx)$/,
+				test: /\.jsx?$/,
 				use: 'babel-loader',
 				exclude: /node_modules/
 			},
