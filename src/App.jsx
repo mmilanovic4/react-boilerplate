@@ -5,7 +5,7 @@ import Hello from './components/Hello';
 import './main.css';
 
 const App = () => {
-	return(
+	return (
 		<React.Fragment>
 			<Hello />
 		</React.Fragment>

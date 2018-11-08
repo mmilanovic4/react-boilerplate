@@ -7,7 +7,7 @@ class Hello extends React.Component {
 	};
 
 	render() {
-		return(
+		return (
 			<p>Hello, {this.state.name}.</p>
 		);
 	}
