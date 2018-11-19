@@ -3,6 +3,3 @@ node_modules/
 
 # Bundled files
 public/app.js
-
-# Auto-generated files
-package-lock.json
