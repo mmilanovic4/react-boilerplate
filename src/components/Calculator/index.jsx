@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-class Calculator extends React.Component {
+export default class Calculator extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -12,8 +12,8 @@ class Calculator extends React.Component {
 		};
 	}
 
-	handleChange = (e) => {
-		const { name, value } = e.target;
+	handleChange = (event) => {
+		const { name, value } = event.target;
 
 		this.setState({
 			[name]: value
@@ -25,7 +25,7 @@ class Calculator extends React.Component {
 			<div className="calculator">
 				<h1>Calculator</h1>
 				<label>
-					<span>x =</span>
+					<span>x = </span>
 					<input
 						type="text"
 						name="x"
@@ -34,7 +34,7 @@ class Calculator extends React.Component {
 					/>
 				</label>
 				<label>
-					<span>y =</span>
+					<span>y = </span>
 					<input
 						type="text"
 						name="y"
@@ -55,5 +55,3 @@ class Calculator extends React.Component {
 	}
 
 }
-
-export default Calculator;

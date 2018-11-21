@@ -2,14 +2,12 @@ import React from 'react';
 
 import Calculator from './components/Calculator';
 
-import './main.css';
+import './style.css';
 
-const App = () => {
+export default function App() {
 	return (
 		<React.Fragment>
 			<Calculator />
 		</React.Fragment>
 	);
 }
-
-export default App;

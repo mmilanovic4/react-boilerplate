@@ -1,8 +1,8 @@
 module.exports = {
 	entry: {
-		app: './src/index.jsx',
-		dependencies: [
+		app: [
 			'@babel/polyfill',
+			'./src/index.js'
 		]
 	},
 	resolve: {
