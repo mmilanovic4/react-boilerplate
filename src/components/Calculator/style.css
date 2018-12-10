@@ -2,8 +2,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	user-select: none;
-	-moz-user-select: none;
 }
 
 .calculator > h1 {
@@ -18,6 +16,8 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
+	user-select: none;
+	-moz-user-select: none;
 }
 
 .calculator > label > span {
