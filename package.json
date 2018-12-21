@@ -9,7 +9,7 @@
 	"license": "LGPL-3.0-or-later",
 	"scripts": {
 		"build": "webpack --config webpack.prod.js",
-		"start:dev": "webpack-dev-server --open --config webpack.dev.js",
+		"start:dev": "webpack-dev-server --open --config webpack.dev.js --disable-host-check",
 		"start:prod": "webpack-dev-server --open --config webpack.dev.js --mode production"
 	},
 	"devDependencies": {
