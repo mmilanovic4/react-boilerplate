@@ -2,6 +2,16 @@ import React from 'react';
 
 import './style.css';
 
+function CalculatorWrapper(props) {
+	console.log(props.children);
+
+	return (
+		<div className="calculator">
+			{props.children}
+		</div>
+	);
+}
+
 export default class Calculator extends React.Component {
 
 	constructor(props) {
@@ -22,7 +32,7 @@ export default class Calculator extends React.Component {
 
 	render() {
 		return (
-			<div className="calculator">
+			<CalculatorWrapper>
 				<h1>Calculator</h1>
 				<label>
 					<span>x = </span>
@@ -50,7 +60,7 @@ export default class Calculator extends React.Component {
 						value={parseInt(this.state.x) + parseInt(this.state.y)}
 					/>
 				</label>
-			</div>
+			</CalculatorWrapper>
 		);
 	}
 
