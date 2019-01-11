@@ -4,10 +4,15 @@ import Calculator from './Calculator';
 
 import './style.css';
 
-export default function App() {
+/**
+ * @returns {object}
+ */
+function App() {
 	return (
 		<React.Fragment>
 			<Calculator />
 		</React.Fragment>
 	);
 }
+
+export default App;

@@ -2,9 +2,11 @@ import React from 'react';
 
 import './style.css';
 
+/**
+ * @param {object} props
+ * @returns {object}
+ */
 function CalculatorWrapper(props) {
-	console.log(props.children);
-
 	return (
 		<div className="calculator">
 			{props.children}
@@ -12,16 +14,20 @@ function CalculatorWrapper(props) {
 	);
 }
 
-export default class Calculator extends React.Component {
+class Calculator extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			x: 0,
-			y: 0
-		};
-	}
+	/**
+	 * @type {object}
+	 */
+	state = {
+		x: 0,
+		y: 0
+	};
 
+	/**
+	 * @param {object} event
+	 * @returns {undefined}
+	 */
 	handleChange = (event) => {
 		const { name, value } = event.target;
 
@@ -30,6 +36,9 @@ export default class Calculator extends React.Component {
 		});
 	};
 
+	/**
+	 * @returns {object}
+	 */
 	render() {
 		return (
 			<CalculatorWrapper>
@@ -65,3 +74,5 @@ export default class Calculator extends React.Component {
 	}
 
 }
+
+export default Calculator;
