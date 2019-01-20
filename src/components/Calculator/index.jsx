@@ -14,7 +14,7 @@ function CalculatorWrapper(props) {
 	);
 }
 
-class Calculator extends React.Component {
+export default class Calculator extends React.Component {
 
 	/**
 	 * @type {object}
@@ -74,5 +74,3 @@ class Calculator extends React.Component {
 	}
 
 }
-
-export default Calculator;
