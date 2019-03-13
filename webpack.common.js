@@ -29,12 +29,22 @@ module.exports = {
 			// Images
 			{
 				test: /\.(jpg|jpeg|png|gif|webp)$/,
-				use: 'file-loader'
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: 'img/[name].[ext]'
+					}
+				}
 			},
 			// Fonts
 			{
 				test: /\.(eot|otf|svg|ttf|woff|woff2)$/,
-				use: 'file-loader'
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: 'fonts/[name].[ext]'
+					}
+				}
 			}
 		]
 	}

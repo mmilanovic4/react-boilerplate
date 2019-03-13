@@ -7,9 +7,11 @@ import './style.css';
  * @returns {object}
  */
 function CalculatorWrapper(props) {
+	const { children } = props;
+
 	return (
 		<div className="calculator">
-			{props.children}
+			{children}
 		</div>
 	);
 }
@@ -40,6 +42,8 @@ export default class Calculator extends React.Component {
 	 * @returns {object}
 	 */
 	render() {
+		const { x, y } = this.state;
+
 		return (
 			<CalculatorWrapper>
 				<h1>Calculator</h1>
@@ -48,7 +52,7 @@ export default class Calculator extends React.Component {
 					<input
 						type="text"
 						name="x"
-						value={this.state.x}
+						value={x}
 						onChange={this.handleChange}
 					/>
 				</label>
@@ -57,7 +61,7 @@ export default class Calculator extends React.Component {
 					<input
 						type="text"
 						name="y"
-						value={this.state.y}
+						value={y}
 						onChange={this.handleChange}
 					/>
 				</label>
@@ -66,7 +70,7 @@ export default class Calculator extends React.Component {
 					<input
 						type="text"
 						disabled={true}
-						value={parseInt(this.state.x) + parseInt(this.state.y)}
+						value={parseInt(x) + parseInt(y)}
 					/>
 				</label>
 			</CalculatorWrapper>
