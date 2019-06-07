@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 
-ReactDOM.render(
-	React.createElement(App),
-	document.getElementById('root')
-);
+const el = React.createElement(App);
+const target = document.getElementById('root');
+
+ReactDOM.render(el, target);

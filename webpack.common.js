@@ -1,7 +1,8 @@
 module.exports = {
 	entry: {
 		app: [
-			'@babel/polyfill',
+			'core-js/stable',
+			'regenerator-runtime/runtime',
 			'./src/index.js'
 		]
 	},
