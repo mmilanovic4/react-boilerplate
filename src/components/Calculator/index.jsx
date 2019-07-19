@@ -43,6 +43,7 @@ export default class Calculator extends React.Component {
 	 */
 	render() {
 		const { x, y } = this.state;
+		const sum = Number.parseInt(x, 10) + Number.parseInt(y, 10);
 
 		return (
 			<CalculatorWrapper>
@@ -70,7 +71,7 @@ export default class Calculator extends React.Component {
 					<input
 						type="text"
 						disabled={true}
-						value={parseInt(x) + parseInt(y)}
+						value={sum}
 					/>
 				</label>
 			</CalculatorWrapper>
