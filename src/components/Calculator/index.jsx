@@ -3,6 +3,16 @@ import React from 'react';
 import './style.css';
 
 /**
+ * Convert string from text input to number
+ * @param {string} number
+ * @returns {number}
+ */
+function convertStringToNumber(input) {
+	const output = Number.parseInt(input.toString().replace(/[^0-9]/g, '').replace(/^0+/g, ''), 10);
+	return Number.isNaN(output) ? 0 : output;
+}
+
+/**
  * @param {object} props
  * @returns {object}
  */
@@ -23,7 +33,7 @@ export default class Calculator extends React.Component {
 	 */
 	state = {
 		x: 0,
-		y: 0
+		y: 0,
 	};
 
 	/**
@@ -34,7 +44,7 @@ export default class Calculator extends React.Component {
 		const { name, value } = event.target;
 
 		this.setState({
-			[name]: value
+			[name]: convertStringToNumber(value),
 		});
 	};
 
@@ -43,7 +53,6 @@ export default class Calculator extends React.Component {
 	 */
 	render() {
 		const { x, y } = this.state;
-		const sum = Number.parseInt(x, 10) + Number.parseInt(y, 10);
 
 		return (
 			<CalculatorWrapper>
@@ -54,6 +63,7 @@ export default class Calculator extends React.Component {
 						type="text"
 						name="x"
 						value={x}
+						inputMode="number"
 						onChange={this.handleChange}
 					/>
 				</label>
@@ -63,6 +73,7 @@ export default class Calculator extends React.Component {
 						type="text"
 						name="y"
 						value={y}
+						inputMode="number"
 						onChange={this.handleChange}
 					/>
 				</label>
@@ -71,7 +82,7 @@ export default class Calculator extends React.Component {
 					<input
 						type="text"
 						disabled={true}
-						value={sum}
+						value={x + y}
 					/>
 				</label>
 			</CalculatorWrapper>
