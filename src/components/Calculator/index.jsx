@@ -8,14 +8,10 @@ import './style.css';
  * @returns {number}
  */
 function convertStringToNumber(input) {
-	const output = Number.parseInt(input.toString().replace(/[^0-9]/g, '').replace(/^0+/g, ''), 10);
+	const output = Number.parseInt(input.toString().replace(/0-9/g, '').replace(/^0+/g, ''), 10);
 	return Number.isNaN(output) ? 0 : output;
 }
 
-/**
- * @param {object} props
- * @returns {object}
- */
 function CalculatorWrapper(props) {
 	const { children } = props;
 
@@ -28,18 +24,11 @@ function CalculatorWrapper(props) {
 
 export default class Calculator extends React.Component {
 
-	/**
-	 * @type {object}
-	 */
 	state = {
 		x: 0,
 		y: 0,
 	};
 
-	/**
-	 * @param {object} event
-	 * @returns {undefined}
-	 */
 	handleChange = (event) => {
 		const { name, value } = event.target;
 
@@ -48,11 +37,9 @@ export default class Calculator extends React.Component {
 		});
 	};
 
-	/**
-	 * @returns {object}
-	 */
 	render() {
 		const { x, y } = this.state;
+		const z = (x + y).toLocaleString();
 
 		return (
 			<CalculatorWrapper>
@@ -82,7 +69,7 @@ export default class Calculator extends React.Component {
 					<input
 						type="text"
 						disabled={true}
-						value={x + y}
+						value={z}
 					/>
 				</label>
 			</CalculatorWrapper>

@@ -5,11 +5,9 @@
 }
 
 .calculator > h1 {
-	font-size: 60px;
+	font-size: 4rem;
 	font-weight: normal;
-	line-height: 60px;
-	margin-bottom: 20px;
-	padding: 10px;
+	line-height: 6.4rem;
 }
 
 .calculator > label {
@@ -26,14 +24,19 @@
 	width: 100px;
 }
 
+.calculator > label:last-of-type {
+	margin-bottom: 0;
+}
+
 .calculator > label > input {
 	border: 1px solid #bbb;
 	font-size: 20px;
 	outline: 0;
 	padding: 10px;
+	text-align: right;
 	width: 200px;
 }
 
 .calculator > label > input:focus {
-	border-bottom-color: #369;
+	border-color: #369;
 }
