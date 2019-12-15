@@ -1,7 +1,7 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports = (env) => {
+module.exports = env => {
 	const isProd = env && env.prod;
 
 	return {
@@ -59,9 +59,15 @@ module.exports = (env) => {
 		},
 		plugins: [
 			new CopyPlugin([
-				{ from: path.resolve(__dirname, 'html'), to: path.resolve(__dirname, 'dist') },
-				{ from: path.resolve(__dirname, 'static'), to: path.resolve(__dirname, 'dist', 'static') }
+				{
+					from: path.resolve(__dirname, 'html'),
+					to: path.resolve(__dirname, 'dist')
+				},
+				{
+					from: path.resolve(__dirname, 'static'),
+					to: path.resolve(__dirname, 'dist', 'static')
+				}
 			])
 		]
-	}
+	};
 };
