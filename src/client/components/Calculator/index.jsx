@@ -3,9 +3,6 @@ import React from 'react';
 import { x as initialX, y as initialY } from './../../Config.json';
 import './style.css';
 
-console.debug(initialX);
-console.debug(initialY);
-
 /**
  * Convert string from text input to number
  * @param {string} number
