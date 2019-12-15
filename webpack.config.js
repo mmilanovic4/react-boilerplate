@@ -2,7 +2,7 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = env => {
-	const isProd = env && env.prod;
+	const isProd = (env && env.prod) === true;
 
 	return {
 		mode: isProd ? 'production' : 'development',

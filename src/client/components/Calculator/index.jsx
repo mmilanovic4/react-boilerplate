@@ -1,6 +1,10 @@
 import React from 'react';
 
+import { x as initialX, y as initialY } from './../../Config.json';
 import './style.css';
+
+console.debug(initialX);
+console.debug(initialY);
 
 /**
  * Convert string from text input to number
@@ -21,13 +25,13 @@ function convertStringToNumber(input) {
 function CalculatorWrapper(props) {
 	const { children } = props;
 
-	return <div className='calculator'>{children}</div>;
+	return <div className="calculator">{children}</div>;
 }
 
 export default class Calculator extends React.Component {
 	state = {
-		x: 0,
-		y: 0
+		x: initialX,
+		y: initialY
 	};
 
 	handleChange = event => {
@@ -48,26 +52,26 @@ export default class Calculator extends React.Component {
 				<label>
 					<span>x = </span>
 					<input
-						type='text'
-						name='x'
+						type="text"
+						name="x"
 						value={x}
-						inputMode='number'
+						inputMode="number"
 						onChange={this.handleChange}
 					/>
 				</label>
 				<label>
 					<span>y = </span>
 					<input
-						type='text'
-						name='y'
+						type="text"
+						name="y"
 						value={y}
-						inputMode='number'
+						inputMode="number"
 						onChange={this.handleChange}
 					/>
 				</label>
 				<label>
 					<span>x + y = </span>
-					<input type='text' disabled={true} value={z} />
+					<input type="text" disabled={true} value={z} />
 				</label>
 			</CalculatorWrapper>
 		);
