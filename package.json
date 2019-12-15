@@ -8,9 +8,10 @@
 	},
 	"license": "LGPL-3.0-or-later",
 	"scripts": {
-		"build": "webpack --config webpack.prod.js",
-		"start:dev": "webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --disable-host-check",
-		"start:prod": "webpack-dev-server --open --config webpack.dev.js --host 0.0.0.0 --mode production"
+		"clean": "rm -rf dist/*",
+		"build:dev": "webpack",
+		"build:prod": "webpack --env.prod",
+		"start:dev": "webpack-dev-server --content-base dist --host 0.0.0.0 --port 8000 --open"
 	},
 	"repository": {
 		"type": "git",
@@ -22,6 +23,7 @@
 		"@babel/preset-env": "^7.7.6",
 		"@babel/preset-react": "^7.7.4",
 		"babel-loader": "^8.0.6",
+		"copy-webpack-plugin": "^5.1.1",
 		"css-loader": "^3.3.0",
 		"file-loader": "^5.0.2",
 		"style-loader": "^1.0.1",
