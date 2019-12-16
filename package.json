@@ -10,8 +10,9 @@
 	"scripts": {
 		"clean": "rm -rf dist/*",
 		"format": "prettier --write src/**/*.{js,jsx,css,json} .prettierrc.json babel.config.js package.json webpack.config.js",
-		"build:dev": "webpack",
-		"build:prod": "webpack --env.prod",
+		"build:dev": "webpack --progress",
+		"build:prod": "webpack --env.prod --progress",
+		"build:stats": "webpack --env.prod --progress --profile --json > stats.json",
 		"start:dev": "webpack-dev-server --content-base dist --host 0.0.0.0 --port 8000 --open --disable-host-check"
 	},
 	"repository": {

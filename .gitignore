@@ -4,3 +4,4 @@ package-lock.json
 
 # Bundled files
 dist
+stats.json

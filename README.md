@@ -29,7 +29,7 @@ You can use this boilerplate with your own server (e.g. Express), then you can j
 npm run build:dev
 ```
 
-Difference between `build:prod` and `build:dev`:
+Differences between `build:prod` and `build:dev`:
 
 - `webpack.mode` is set to `production` if started via `build:prod` or to `development` if started via `build:dev`
 - `webpack.watch` is set to `true` if started via `build:dev`
@@ -43,3 +43,13 @@ npm run build:dev
 # Second terminal
 npm run start:dev
 ```
+
+## Profiling
+
+To profile your JavaScript application simply run:
+
+```
+npm run build:stats
+```
+
+Now `stats.json` file is generated in your project's root directory and you can open it with [webpack analyse](https://github.com/webpack/analyse) or some [other build analysis tool](https://survivejs.com/webpack/optimizing/build-analysis/).
