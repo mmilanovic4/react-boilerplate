@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Calculator from './Calculator';
 import './style.css';
 
 export default function App() {
 	return (
-		<React.Fragment>
+		<Fragment>
 			<Calculator />
-		</React.Fragment>
+		</Fragment>
 	);
 }

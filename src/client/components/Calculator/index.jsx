@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { x as initialX, y as initialY } from './../../Config.json';
 import './style.css';
@@ -19,58 +19,48 @@ function convertStringToNumber(input) {
 	return Number.isNaN(output) ? 0 : output;
 }
 
-function CalculatorWrapper(props) {
+const CalculatorWrapper = props => {
 	const { children } = props;
 
 	return <div className="calculator">{children}</div>;
-}
+};
 
-export default class Calculator extends React.Component {
-	state = {
-		x: initialX,
-		y: initialY
+export default props => {
+	const [x, setX] = useState(initialX);
+	const [y, setY] = useState(initialY);
+
+	const handleChange = (e, handler) => {
+		const { value } = event.target;
+		handler(convertStringToNumber(value));
 	};
 
-	handleChange = event => {
-		const { name, value } = event.target;
+	const z = (x + y).toLocaleString();
 
-		this.setState({
-			[name]: convertStringToNumber(value)
-		});
-	};
-
-	render() {
-		const { x, y } = this.state;
-		const z = (x + y).toLocaleString();
-
-		return (
-			<CalculatorWrapper>
-				<h1>Calculator</h1>
-				<label>
-					<span>x = </span>
-					<input
-						type="text"
-						name="x"
-						value={x}
-						inputMode="number"
-						onChange={this.handleChange}
-					/>
-				</label>
-				<label>
-					<span>y = </span>
-					<input
-						type="text"
-						name="y"
-						value={y}
-						inputMode="number"
-						onChange={this.handleChange}
-					/>
-				</label>
-				<label>
-					<span>x + y = </span>
-					<input type="text" disabled={true} value={z} />
-				</label>
-			</CalculatorWrapper>
-		);
-	}
-}
+	return (
+		<CalculatorWrapper>
+			<h1>Calculator</h1>
+			<label>
+				<span>x =</span>
+				<input
+					type="text"
+					inputMode="numeric"
+					value={x}
+					onChange={e => handleChange(e, setX)}
+				/>
+			</label>
+			<label>
+				<span>y =</span>
+				<input
+					type="text"
+					inputMode="numeric"
+					value={y}
+					onChange={e => handleChange(e, setY)}
+				/>
+			</label>
+			<label>
+				<span>z =</span>
+				<input type="text" disabled value={z} />
+			</label>
+		</CalculatorWrapper>
+	);
+};
