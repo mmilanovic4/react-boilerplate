@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { x as initialX, y as initialY } from './../../Config.json';
+import { x as initialX, y as initialY } from 'Client/Config.json';
 import './style.css';
 
 /**
