@@ -37,10 +37,6 @@ Differences between `build:prod` and `build:dev`:
 To serve this app via `webpack-dev-server` you simply run:
 
 ```
-# First terminal
-npm run build:dev
-
-# Second terminal
 npm run start:dev
 ```
 
