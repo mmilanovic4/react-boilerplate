@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = env => {
 	const isProd = (env && env.prod) === true;
@@ -21,9 +22,9 @@ module.exports = env => {
 			}
 		},
 		output: {
-			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist', 'assets'),
-			publicPath: 'assets/'
+			publicPath: 'assets/',
+			filename: '[name].js'
 		},
 		module: {
 			rules: [
@@ -36,7 +37,10 @@ module.exports = env => {
 				// CSS
 				{
 					test: /\.css$/,
-					use: ['style-loader', 'css-loader']
+					use: [
+						isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+						'css-loader'
+					]
 				},
 				// Images
 				{
@@ -61,6 +65,10 @@ module.exports = env => {
 			]
 		},
 		plugins: [
+			new MiniCssExtractPlugin({
+				filename: '[name].css',
+				chunkFilename: '[id].css'
+			}),
 			new CopyPlugin([
 				{
 					from: path.resolve(__dirname, 'html'),
