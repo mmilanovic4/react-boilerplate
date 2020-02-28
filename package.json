@@ -29,8 +29,10 @@
 		"css-loader": "^3.3.0",
 		"file-loader": "^5.0.2",
 		"mini-css-extract-plugin": "^0.9.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
 		"prettier": "1.19.1",
 		"style-loader": "^1.0.1",
+		"terser-webpack-plugin": "^2.3.5",
 		"webpack": "^4.41.6",
 		"webpack-cli": "^3.3.11",
 		"webpack-dev-server": "^3.10.3"

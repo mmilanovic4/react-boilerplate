@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { x as initialX, y as initialY } from 'Client/Config.json';
-import './style.css';
+import { x as initialX, y as initialY } from 'Client/config.json';
 
 /**
  * Convert string from text input to number
@@ -19,17 +18,11 @@ function convertStringToNumber(input) {
 	return Number.isNaN(output) ? 0 : output;
 }
 
-const CalculatorWrapper = props => {
-	const { children } = props;
-
-	return <div className="calculator">{children}</div>;
-};
-
-export default props => {
+export default () => {
 	const [x, setX] = useState(initialX);
 	const [y, setY] = useState(initialY);
 
-	const handleChange = (e, handler) => {
+	const handleChange = (event, handler) => {
 		const { value } = event.target;
 		handler(convertStringToNumber(value));
 	};
@@ -37,7 +30,7 @@ export default props => {
 	const z = (x + y).toLocaleString();
 
 	return (
-		<CalculatorWrapper>
+		<div className="calculator">
 			<h1>Calculator</h1>
 			<label>
 				<span>x =</span>
@@ -45,7 +38,7 @@ export default props => {
 					type="text"
 					inputMode="numeric"
 					value={x}
-					onChange={e => handleChange(e, setX)}
+					onChange={event => handleChange(event, setX)}
 				/>
 			</label>
 			<label>
@@ -54,13 +47,13 @@ export default props => {
 					type="text"
 					inputMode="numeric"
 					value={y}
-					onChange={e => handleChange(e, setY)}
+					onChange={event => handleChange(event, setY)}
 				/>
 			</label>
 			<label>
 				<span>z =</span>
 				<input type="text" disabled value={z} />
 			</label>
-		</CalculatorWrapper>
+		</div>
 	);
 };

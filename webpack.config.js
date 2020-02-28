@@ -1,6 +1,8 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = env => {
 	const isProd = (env && env.prod) === true;
@@ -9,10 +11,11 @@ module.exports = env => {
 		mode: isProd ? 'production' : 'development',
 		watch: !isProd,
 		entry: {
-			app: [
+			main: [
 				'core-js/stable',
 				'regenerator-runtime/runtime',
-				'./src/client/index.js'
+				'./src/client/main.js',
+				'./src/client/style.css'
 			]
 		},
 		resolve: {
@@ -66,7 +69,7 @@ module.exports = env => {
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: '[name].css',
+				filename: 'style.css',
 				chunkFilename: '[id].css'
 			}),
 			new CopyPlugin([
@@ -79,6 +82,11 @@ module.exports = env => {
 					to: path.resolve(__dirname, 'dist', 'static')
 				}
 			])
-		]
+		],
+		optimization: {
+			minimizer: isProd
+				? [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
+				: []
+		}
 	};
 };
