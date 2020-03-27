@@ -4,17 +4,17 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = env => {
+module.exports = (env) => {
 	const isProd = (env && env.prod) === true;
 
 	return {
 		mode: isProd ? 'production' : 'development',
 		watch: !isProd,
 		entry: {
-			main: [
+			index: [
 				'core-js/stable',
 				'regenerator-runtime/runtime',
-				'./src/client/main.js',
+				'./src/client/index.js',
 				'./src/client/style.css'
 			]
 		},
@@ -84,6 +84,7 @@ module.exports = env => {
 			])
 		],
 		optimization: {
+			minimize: isProd,
 			minimizer: isProd
 				? [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
 				: []

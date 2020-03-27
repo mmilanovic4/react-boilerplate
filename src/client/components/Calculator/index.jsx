@@ -9,10 +9,7 @@ import { x as initialX, y as initialY } from 'Client/config.json';
  */
 function convertStringToNumber(input) {
 	const output = Number.parseInt(
-		input
-			.toString()
-			.replace(/0-9/g, '')
-			.replace(/^0+/g, ''),
+		input.toString().replace(/0-9/g, '').replace(/^0+/g, ''),
 		10
 	);
 	return Number.isNaN(output) ? 0 : output;
@@ -38,7 +35,7 @@ export default () => {
 					type="text"
 					inputMode="numeric"
 					value={x}
-					onChange={event => handleChange(event, setX)}
+					onChange={(event) => handleChange(event, setX)}
 				/>
 			</label>
 			<label>
@@ -47,7 +44,7 @@ export default () => {
 					type="text"
 					inputMode="numeric"
 					value={y}
-					onChange={event => handleChange(event, setY)}
+					onChange={(event) => handleChange(event, setY)}
 				/>
 			</label>
 			<label>
