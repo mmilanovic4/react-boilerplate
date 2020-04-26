@@ -16,9 +16,6 @@ module.exports = (env) => {
 				'regenerator-runtime/runtime',
 				'./src/client/index.js',
 				'./src/client/style.css'
-			],
-			admin: [
-				'./src/client/admin.js'
 			]
 		},
 		resolve: {
