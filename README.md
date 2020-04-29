@@ -48,4 +48,8 @@ To profile your JavaScript application simply run:
 npm run build:stats
 ```
 
+## Server-side rendering
+
+If you need React SSR take a look at [Express boilerplate](https://github.com/mmilanovic4/express-boilerplate).
+
 Now `stats.json` file is generated in your project's root directory and you can open it with [webpack analyse](https://github.com/webpack/analyse) or some [other build analysis tool](https://survivejs.com/webpack/optimizing/build-analysis/).
