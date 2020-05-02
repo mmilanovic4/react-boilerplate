@@ -44,26 +44,6 @@ module.exports = (env) => {
 						isProd ? MiniCssExtractPlugin.loader : 'style-loader',
 						'css-loader'
 					]
-				},
-				// Images
-				{
-					test: /\.(jpg|jpeg|png|gif|webp)$/,
-					use: {
-						loader: 'file-loader',
-						options: {
-							name: 'img/[name].[ext]'
-						}
-					}
-				},
-				// Fonts
-				{
-					test: /\.(eot|otf|svg|ttf|woff|woff2)$/,
-					use: {
-						loader: 'file-loader',
-						options: {
-							name: 'fonts/[name].[ext]'
-						}
-					}
 				}
 			]
 		},
