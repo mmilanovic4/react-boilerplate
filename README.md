@@ -2,6 +2,10 @@
 	<img src="static/logo.png" alt="React boilerplate">
 </p>
 
+<p align="center">
+	<img src="https://img.shields.io/github/license/mmilanovic4/react-boilerplate" alt="License">
+</p>
+
 # Overview
 
 A simple boilerplate for creating React applications.
