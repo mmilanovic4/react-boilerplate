@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from 'Client/pages/Index';
+import App from './App';
 
 const el = React.createElement(App);
 const target = document.getElementById('root');
