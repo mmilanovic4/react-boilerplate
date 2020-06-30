@@ -20,12 +20,12 @@
 		"url": "https://github.com/mmilanovic4/react-boilerplate.git"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.10.3",
-		"@babel/plugin-proposal-class-properties": "^7.10.1",
-		"@babel/preset-env": "^7.10.3",
-		"@babel/preset-react": "^7.10.1",
+		"@babel/core": "^7.10.4",
+		"@babel/plugin-proposal-class-properties": "^7.10.4",
+		"@babel/preset-env": "^7.10.4",
+		"@babel/preset-react": "^7.10.4",
 		"babel-loader": "^8.1.0",
-		"copy-webpack-plugin": "^6.0.2",
+		"copy-webpack-plugin": "^6.0.3",
 		"css-loader": "^3.6.0",
 		"mini-css-extract-plugin": "^0.9.0",
 		"optimize-css-assets-webpack-plugin": "^5.0.3",
