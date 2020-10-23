@@ -11,35 +11,35 @@
 		"clean": "rm -rf dist/*",
 		"format": "prettier --write src/**/*.{js,jsx,css,json} *.{js,json}",
 		"build:dev": "webpack --progress",
-		"build:prod": "webpack --env.prod --progress",
-		"build:stats": "webpack --env.prod --progress --profile --json > stats.json",
-		"start:dev": "webpack-dev-server --content-base dist --host 0.0.0.0 --port 8000 --open --disable-host-check"
+		"build:prod": "webpack --env prod --progress",
+		"build:stats": "webpack --env prod --progress --profile --json > stats.json",
+		"start:dev": "webpack serve --content-base dist --host 0.0.0.0 --port 8000 --open --disable-host-check"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mmilanovic4/react-boilerplate.git"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.11.6",
-		"@babel/plugin-proposal-class-properties": "^7.10.4",
-		"@babel/preset-env": "^7.11.5",
-		"@babel/preset-react": "^7.10.4",
+		"@babel/core": "^7.12.3",
+		"@babel/plugin-proposal-class-properties": "^7.12.1",
+		"@babel/preset-env": "^7.12.1",
+		"@babel/preset-react": "^7.12.1",
 		"babel-loader": "^8.1.0",
 		"copy-webpack-plugin": "^6.2.1",
-		"css-loader": "^4.3.0",
-		"mini-css-extract-plugin": "^1.0.0",
+		"css-loader": "^5.0.0",
+		"mini-css-extract-plugin": "^1.1.2",
 		"optimize-css-assets-webpack-plugin": "^5.0.4",
 		"prettier": "^2.1.2",
 		"style-loader": "^2.0.0",
-		"terser-webpack-plugin": "^4.2.3",
-		"webpack": "^4.44.2",
-		"webpack-cli": "^3.3.12",
+		"terser-webpack-plugin": "^5.0.0",
+		"webpack": "^5.2.0",
+		"webpack-cli": "^4.1.0",
 		"webpack-dev-server": "^3.11.0"
 	},
 	"dependencies": {
 		"core-js": "^3.6.5",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
 		"regenerator-runtime": "^0.13.5"
 	}
 }

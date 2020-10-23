@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { x as initialX, y as initialY } from 'Client/config.json';
+import config from 'Client/config.json';
 
 /**
  * Convert string from text input to number
@@ -16,11 +16,11 @@ function convertStringToNumber(input) {
 }
 
 export default () => {
-	const [x, setX] = useState(initialX);
-	const [y, setY] = useState(initialY);
+	const [x, setX] = useState(config?.x);
+	const [y, setY] = useState(config?.y);
 
 	const handleChange = (event, handler) => {
-		const { value } = event.target;
+		const { value } = event?.target;
 		handler(convertStringToNumber(value));
 	};
 
