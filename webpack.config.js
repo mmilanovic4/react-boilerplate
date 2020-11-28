@@ -5,11 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = (env) => {
-	const isProd = (env && env.prod) === true;
+	const isDev = env?.dev === true;
 
 	return {
-		mode: isProd ? 'production' : 'development',
-		watch: !isProd,
+		mode: isDev ? 'development' : 'production',
+		watch: isDev,
 		entry: {
 			index: [
 				'core-js/stable',
@@ -41,7 +41,7 @@ module.exports = (env) => {
 				{
 					test: /\.css$/,
 					use: [
-						isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+						isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
 						'css-loader'
 					]
 				}
@@ -66,10 +66,10 @@ module.exports = (env) => {
 			})
 		],
 		optimization: {
-			minimize: isProd,
-			minimizer: isProd
-				? [new TerserJSPlugin({}), new CssMinimizerPlugin({})]
-				: []
+			minimize: !isDev,
+			minimizer: isDev
+				? []
+				: [new TerserJSPlugin({}), new CssMinimizerPlugin({})]
 		}
 	};
 };

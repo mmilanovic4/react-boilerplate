@@ -38,12 +38,6 @@ Differences between `build:prod` and `build:dev`:
 - `webpack.mode` is set to `production` if started via `build:prod` or to `development` if started via `build:dev`
 - `webpack.watch` is set to `true` if started via `build:dev`
 
-To serve this app via `webpack-dev-server` you simply run:
-
-```
-npm run start:dev
-```
-
 ## Profiling
 
 To profile your JavaScript application simply run:
