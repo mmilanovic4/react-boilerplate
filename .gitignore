@@ -5,3 +5,6 @@ package-lock.json
 # Bundled files
 dist
 stats.json
+
+# Other
+.DS_Store
