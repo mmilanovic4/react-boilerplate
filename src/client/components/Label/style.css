@@ -1,6 +1,0 @@
-.label {
-	display: grid;
-	align-items: center;
-	grid-gap: 10px;
-	grid-template-columns: 50px 1fr;
-}

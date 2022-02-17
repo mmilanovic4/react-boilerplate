@@ -12,7 +12,9 @@ module.exports = (env) => {
 		watch: isDev,
 		entry: {
 			index: [
-				'core-js/stable',
+				'core-js/es/map',
+				'core-js/es/set',
+				'raf/polyfill',
 				'regenerator-runtime/runtime',
 				'./src/client/index.js',
 				'./src/client/style.css'
