@@ -16,15 +16,12 @@ module.exports = (env) => {
 				'core-js/es/set',
 				'raf/polyfill',
 				'regenerator-runtime/runtime',
-				'./src/client/index.js',
-				'./src/client/style.css'
+				'./src/index.js',
+				'./src/style.css'
 			]
 		},
 		resolve: {
-			extensions: ['.js', '.jsx'],
-			alias: {
-				Client: path.resolve(__dirname, 'src', 'client')
-			}
+			extensions: ['.js', '.jsx']
 		},
 		output: {
 			path: path.resolve(__dirname, 'dist', 'assets'),
