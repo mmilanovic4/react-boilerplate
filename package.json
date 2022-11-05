@@ -10,9 +10,9 @@
 	"scripts": {
 		"clean": "rm -rf dist/*",
 		"format": "prettier --write src/**/*.{js,jsx,css,json} *.{js,json}",
-		"build:dev": "webpack --env dev --progress",
-		"build:prod": "webpack --progress",
-		"build:stats": "webpack --progress --profile --json > stats.json"
+		"dev": "webpack --env dev --progress",
+		"prod": "webpack --progress",
+		"stats": "webpack --progress --profile --json > stats.json"
 	},
 	"repository": {
 		"type": "git",
