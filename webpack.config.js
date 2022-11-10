@@ -16,8 +16,8 @@ module.exports = (env) => {
 				'core-js/es/set',
 				'raf/polyfill',
 				'regenerator-runtime/runtime',
-				'./src/index.js',
-				'./src/style.css'
+				'./src/main.css',
+				'./src/index.js'
 			]
 		},
 		resolve: {
@@ -54,7 +54,7 @@ module.exports = (env) => {
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: 'style.css',
+				filename: 'main.css',
 				chunkFilename: '[id].css'
 			}),
 			new CopyPlugin({
