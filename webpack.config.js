@@ -41,7 +41,7 @@ module.exports = (env) => {
 								'@babel/preset-env',
 								['@babel/preset-react', { runtime: 'automatic' }]
 							],
-							plugins: ['@babel/plugin-proposal-class-properties']
+							plugins: []
 						}
 					}
 				},
