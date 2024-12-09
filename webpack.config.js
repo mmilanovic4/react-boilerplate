@@ -11,14 +11,7 @@ module.exports = (env) => {
 		mode: isDev ? 'development' : 'production',
 		watch: isDev,
 		entry: {
-			index: [
-				'core-js/es/map',
-				'core-js/es/set',
-				'raf/polyfill',
-				'regenerator-runtime/runtime',
-				'./src/main.css',
-				'./src/index.js'
-			]
+			index: ['./src/main.css', './src/index.js']
 		},
 		resolve: {
 			extensions: ['.js', '.jsx']
