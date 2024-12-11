@@ -9,7 +9,7 @@
 	"license": "LGPL-3.0-or-later",
 	"scripts": {
 		"clean": "rm -rf dist/*",
-		"format": "prettier --write src/**/*.{js,jsx,css,json} *.{js,json}",
+		"format": "prettier --write src/**/*.{js,css}",
 		"dev": "webpack --env dev --progress",
 		"prod": "webpack --progress",
 		"stats": "webpack --progress --profile --json > stats.json"
