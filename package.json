@@ -2,6 +2,7 @@
 	"name": "react-boilerplate",
 	"version": "1.0.0",
 	"description": "A simple boilerplate for creating React applications.",
+	"type": "module",
 	"author": {
 		"name": "Miloš Milanović",
 		"email": "mmilanovic016@gmail.com"
@@ -9,32 +10,18 @@
 	"license": "LGPL-3.0-or-later",
 	"scripts": {
 		"clean": "rm -rf dist/*",
-		"format": "prettier --write src/**/*.{js,css}",
-		"dev": "webpack --env dev --progress",
-		"prod": "webpack --progress",
-		"stats": "webpack --progress --profile --json > stats.json"
+		"format": "prettier --write src/**/*.{js,jsx,css,json}",
+		"dev": "vite --host",
+		"prod": "vite build"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mmilanovic4/react-boilerplate.git"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.27.4",
-		"@babel/preset-env": "^7.27.2",
-		"@babel/preset-react": "^7.27.1",
-		"autoprefixer": "^10.4.21",
-		"babel-loader": "^10.0.0",
-		"copy-webpack-plugin": "^13.0.0",
-		"css-loader": "7.1.2",
-		"css-minimizer-webpack-plugin": "^7.0.2",
-		"mini-css-extract-plugin": "2.9.2",
-		"postcss": "^8.5.4",
-		"postcss-loader": "8.1.1",
+		"@vitejs/plugin-react": "^4.5.2",
 		"prettier": "^3.5.3",
-		"style-loader": "4.0.0",
-		"terser-webpack-plugin": "^5.3.14",
-		"webpack": "^5.99.9",
-		"webpack-cli": "^6.0.1"
+		"vite": "^6.3.5"
 	},
 	"dependencies": {
 		"react": "^19.1.0",
